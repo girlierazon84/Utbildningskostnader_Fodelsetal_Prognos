@@ -1,0 +1,30 @@
+-- database: c:\Users\girli\OneDrive\Desktop\Education_Costs\ds_database.db
+
+SELECT * FROM population_17_19_per_region;
+ALTER TABLE population_17_19_per_region
+ADD COLUMN Region_Name TEXT;
+UPDATE population_17_19_per_region
+SET Region_Name = CASE
+    WHEN Region = '1' THEN 'Stockholms Län'
+    WHEN Region = '3' THEN 'Uppsala Län'
+    WHEN Region = '4' THEN 'Södermanlands Län'
+    WHEN Region = '5' THEN 'Östergötlands Län'
+    WHEN Region = '6' THEN 'Jönköpings Län'
+    WHEN Region = '7' THEN 'Kronobergs Län'
+    WHEN Region = '8' THEN 'Kalmar Län'
+    WHEN Region = '9' THEN 'Gotlands Län'
+    WHEN Region = '10' THEN 'Blekinge Län'
+    WHEN Region = '12' THEN 'Skåne Län'
+    WHEN Region = '13' THEN 'Hallands Län'
+    WHEN Region = '14' THEN 'Västra Götalands Län'
+    WHEN Region = '17' THEN 'Värmlands Län'
+    WHEN Region = '18' THEN 'Örebro Län'
+    WHEN Region = '19' THEN 'Västmanlands Län'
+    WHEN Region = '20' THEN 'Dalarnas Län'
+    WHEN Region = '21' THEN 'Gävleborgs Län'
+    WHEN Region = '22' THEN 'Västernorrlands Län'
+    WHEN Region = '23' THEN 'Jämtlands Län'
+    WHEN Region = '24' THEN 'Västerbottens Län'
+    WHEN Region = '25' THEN 'Norrbottens Län'
+    ELSE NULL -- You can set this to NULL or leave it as is
+END;

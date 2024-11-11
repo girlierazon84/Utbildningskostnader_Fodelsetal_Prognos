@@ -1,0 +1,29 @@
+-- database: ./ds_database.db
+
+SELECT * FROM birth_data_per_region;
+UPDATE birth_data_per_region
+SET Region_Name = CASE
+    WHEN Region_Code = '1' THEN 'Stockholms Län'
+    WHEN Region_Code = '3' THEN 'Uppsala Län'
+    WHEN Region_Code = '4' THEN 'Södermanlands Län'
+    WHEN Region_Code = '5' THEN 'Östergötlands Län'
+    WHEN Region_Code = '6' THEN 'Jönköpings Län'
+    WHEN Region_Code = '7' THEN 'Kronobergs Län'
+    WHEN Region_Code = '8' THEN 'Kalmar Län'
+    WHEN Region_Code = '9' THEN 'Gotlands Län'
+    WHEN Region_Code = '10' THEN 'Blekinge Län'
+    WHEN Region_Code = '12' THEN 'Skåne Län'
+    WHEN Region_Code = '13' THEN 'Hallands Län'
+    WHEN Region_Code = '14' THEN 'Västra Götalands Län'
+    WHEN Region_Code = '17' THEN 'Värmlands Län'
+    WHEN Region_Code = '18' THEN 'Örebro Län'
+    WHEN Region_Code = '19' THEN 'Västmanlands Län'
+    WHEN Region_Code = '20' THEN 'Dalarnas Län'
+    WHEN Region_Code = '21' THEN 'Gävleborgs Län'
+    WHEN Region_Code = '22' THEN 'Västernorrlands Län'
+    WHEN Region_Code = '23' THEN 'Jämtlands Län'
+    WHEN Region_Code = '24' THEN 'Västerbottens Län'
+    WHEN Region_Code = '25' THEN 'Norrbottens Län'
+    ELSE Region_Name
+END
+WHERE Region_Name IS NULL;
